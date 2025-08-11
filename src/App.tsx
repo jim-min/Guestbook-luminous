@@ -68,8 +68,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex justify-center">
-      <div className="min-h-screen w-full max-w-md bg-gradient-to-br from-blue-50 to-indigo-100 main-background">
+    <div className="h-screen bg-white flex justify-center">
+      <div className="h-screen w-full max-w-md bg-gradient-to-br from-blue-50 to-indigo-100 main-background overflow-y-auto">
         <Header showForm={showForm} setShowForm={setShowForm} setCurrentPage={setCurrentPage} currentPage={currentPage} />
         {currentPage === 'guestbook' ? (
           <GuestBook 
