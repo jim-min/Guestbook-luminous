@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+.main-background {
+  background-image: url('/bg_lumi.png');
+  background-size: cover;
+  background-position: left 58% center;
+  background-repeat: no-repeat;
+}
+
+.liquid-glass {
+  --glass-padding: 1.875rem;
+  --border-radius: 2rem;
+  --transition: 0.4s cubic-bezier(0.5, 1.5, 0.5, 1);
+  --menu-gap: 1rem;
+  --icon-size: 4rem;
+  --icon-border-radius: 2rem;
+  --icon-padding: 0.75rem;
+
+  border-radius: var(--border-radius);
+  cursor: grab;
+  padding: var(--glass-padding);
+  position: relative;
+  isolation: isolate;
+  transition: width var(--transition), height var(--transition),
+    padding var(--transition);
+}
+
+.liquid-glass--bend {
+  backdrop-filter: blur(3px);
+  border-radius: var(--border-radius);
+  inset: 0;
+  filter: url(#glass-blur);
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.liquid-glass--face {
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15), 0 0 12px rgba(0, 0, 0, 0.08);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.liquid-glass--edge {
+  border-radius: var(--border-radius);
+  box-shadow: inset 3px 3px 3px 0 rgba(255, 255, 255, 0.45),
+    inset -3px -3px 3px 0 rgba(255, 255, 255, 0.45);
+  inset: 0;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ensure content sits above glass layers and remains sharp */
+.liquid-glass__content {
+  position: relative;
+  z-index: 3;
+  border-radius: var(--icon-border-radius);
+}
+
+.liquid-glass__menus {
+  display: flex;
+  gap: var(--menu-gap);
+  transition: gap var(--transition);
+}
+
+.is-expanded .liquid-glass__menus {
+    --menu-gap: 2rem;
+}
