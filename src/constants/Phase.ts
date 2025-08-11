@@ -90,7 +90,7 @@ export const phase2: Track[] = [
     {
       id: 14,
       title: "Letter - 유다빈밴드",
-      credits: "V. 김지유  K. 이관준  G. 강현국 심현진 \n B. 전성령  D. 강호준",
+      credits: "V. 김지우  K. 이관준  G. 강현국 심현진 \n B. 전성령  D. 강호준",
       cover: "https://image.bugsm.co.kr/album/images/500/204288/20428866.jpg",
     },
     {
@@ -102,7 +102,7 @@ export const phase2: Track[] = [
     {
       id: 16,
       title: "Freddy - 너드커넥션",
-      credits: "V. 김지유  G. 홍지유 류수연  B. 조민서 \n  D. 송현아",
+      credits: "V. 김지우  G. 홍지유 류수연 \n B. 조민서  D. 송현아",
       cover: "https://image.bugsm.co.kr/album/images/500/41053/4105398.jpg",
     },
     {

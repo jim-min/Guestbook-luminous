@@ -3,9 +3,9 @@ import { LiquidGlass } from '../components/LiquidGlass';
 
 interface Message {
   id: number;
+  created_at: string;
   author: string;
   content: string;
-  date: string;
 }
 
 interface FormData {
@@ -97,7 +97,7 @@ export default function GuestBook({
               <div className="liquid-glass__menus flex justify-between mb-3">
                 <div className="flex w-full items-center justify-between">
                   <span className="font-semibold text-gray-800">{message.author}</span>
-                  <span className="text-xs text-gray-600">{message.date}</span>
+                  <span className="text-xs text-gray-600">{message.created_at.split('T')[0]}</span>
                 </div>
               </div>
               <p className="text-gray-900 leading-relaxed">{message.content}</p>

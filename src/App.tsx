@@ -1,50 +1,61 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Header } from './components/Header';
 import GuestBook from './pages/GuestBook';
 import SetList from './pages/SetList';
+import { supabase } from './supabaseClient';
+
+// Message 타입을 정의합니다.
+export interface Message {
+  id: number;
+  author: string;
+  content: string;
+  created_at: string;
+}
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'guestbook' | 'setlist'>('guestbook');
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      author: '최동건',
-      content: '정말 멋진 공연입니다!! 루미너스 4기 지원해야겠지?',
-      date: '2024-08-06'
-    },
-    {
-      id: 2,
-      author: '김지우',
-      content: '공연 너무 재밌어요. 자주 들릴게요!',
-      date: '2024-08-05'
-    },
-    {
-      id: 3,
-      author: '전성령',
-      content: '지각해서 OB 축하공연을 놓쳤네요. 다음에 올게요 ㅠㅠ',
-      date: '2024-08-05'
-    },
-  ]);
-  
+  const [messages, setMessages] = useState<Message[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     author: '',
     content: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 컴포넌트가 마운트될 때 Supabase에서 메시지를 가져옵니다.
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
+  const fetchMessages = async () => {
+    const { data: messages, error } = await supabase
+      .from('messages')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching messages:', error);
+    } else if (messages) {
+      setMessages(messages);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.author.trim() && formData.content.trim()) {
-      const newMessage = {
-        id: Date.now(),
-        author: formData.author.trim(),
-        content: formData.content.trim(),
-        date: new Date().toISOString().split('T')[0]
-      };
-      setMessages([newMessage, ...messages]);
-      setFormData({ author: '', content: '' });
-      setShowForm(false);
+      const { data, error } = await supabase
+        .from('messages')
+        .insert([{ author: formData.author.trim(), content: formData.content.trim() }])
+        .select();
+
+      if (error) {
+        console.error('Error inserting message:', error);
+      } else if (data) {
+        // UI에 즉시 새로운 메시지를 추가 (Optimistic UI Update)
+        setMessages([data[0], ...messages]);
+        setFormData({ author: '', content: '' });
+        setShowForm(false);
+      }
     }
   };
 
