@@ -5,6 +5,14 @@
   background-size: cover;
   background-position: left 58% center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+  .main-background {
+    background-size: contain;
+    background-position: right 51% center;
+  }
 }
 
 .liquid-glass {
