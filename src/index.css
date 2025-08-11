@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: 'ONE-Mobile-Regular', sans-serif;
+  font-family: 'ONE-Mobile-Regular', 'Arita-dotum-Medium', sans-serif;
+}
+
+.setlist {
+  font-family: 'Arita-dotum-Medium', sans-serif;
 }
