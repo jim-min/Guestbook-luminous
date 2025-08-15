@@ -28,7 +28,7 @@ export const phase1: Track[] = [
       id: 4,
       title: "날아 - 이희빈",
       credits: "V. 이희빈  K. 최동건  G. 강현국 양인영 \n B. 강은미  D. 전성령  Ch. 윤채원",
-      cover: "https://blog.kakaocdn.net/dna/TqpdH/btqx1zPUyyp/AAAAAAAAAAAAAAAAAAAAAKaUwO8a6mEVHdRnUrz89_bf5QrZmEMc0tE6k9DW7ns7/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1756652399&allow_ip=&allow_referer=&signature=JHQUAWBfKKg%2F6PCxEM6ryYLfnB0%3D",
+      cover: "https://image.bugsm.co.kr/album/images/500/207457/20745754.jpg",
     },
     {
       id: 5,
