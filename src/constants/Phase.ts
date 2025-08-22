@@ -120,7 +120,7 @@ export const phase2: Track[] = [
     {
       id: 19,
       title: "낭만고양이 - 체리필터",
-      credits: "V. 강민소  K. 이관준  G. 홍지유 양인영 \n  B. 조민서  D. 박수진",
+      credits: "V. 강민소  K. 이관준  G. 홍지유 양인영 \n  B. 조민서  D. 송현아",
       cover: "https://image.bugsm.co.kr/album/images/500/166/16600.jpg",
     },
   ];
