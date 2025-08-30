@@ -5,6 +5,26 @@ export type Track = {
     cover: string; // image url
   };
 
+export const phaseSpecial: Track[] = [
+    {
+      id: 1,
+      title: "Psycho - Muse",
+      credits: "V. 최동건  G. 오건개 \n B. 이지영 D. 전성령",
+      cover: "https://image.bugsm.co.kr/album/images/500/5091/509182.jpg",
+    },
+    {
+      id: 2,
+      title: "R U Mine? - Arctic Monkeys",
+      credits: "V. 최동건  G. 오건개 \n B. 이지영 D. 전성령",
+      cover: "https://image.bugsm.co.kr/album/images/500/3907/390797.jpg",
+    },
+    {
+      id: 3,
+      title: "Good Morning Sunshine - The Poles",
+      credits: "V. 최동건  G. 오건개 \n B. 이지영 D. 전성령",
+      cover: "https://image.bugsm.co.kr/album/images/500/203757/20375757.jpg",
+    },
+]
 export const phase1: Track[] = [
     {
       id: 1,
