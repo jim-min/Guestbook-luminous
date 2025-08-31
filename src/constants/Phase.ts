@@ -134,7 +134,7 @@ export const phase2: Track[] = [
     {
       id: 18,
       title: "Season in the Sun - TUBE",
-      credits: "V. 심현진  K. 이관준  G. 홍지유 \n  B. 조민서  D. 강호준",
+      credits: "V. 심현진  K. 이관준  G. 홍지유 \n  B. 조민서  D. 박수진",
       cover: "https://i1.sndcdn.com/artworks-NoIiwEZbVz4kEVdQ-7eoy6g-t240x240.jpg",
     },
     {
