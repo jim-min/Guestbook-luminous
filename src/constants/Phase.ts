@@ -8,9 +8,9 @@ export type Track = {
 export const phaseSpecial: Track[] = [
     {
       id: 1,
-      title: "Psycho - Muse",
+      title: "Good Morning Sunshine - The Poles",
       credits: "V. 최동건  G. 오건개 \n B. 이지영 D. 전성령",
-      cover: "https://image.bugsm.co.kr/album/images/500/5091/509182.jpg",
+      cover: "https://image.bugsm.co.kr/album/images/500/203757/20375757.jpg",
     },
     {
       id: 2,
@@ -20,9 +20,9 @@ export const phaseSpecial: Track[] = [
     },
     {
       id: 3,
-      title: "Good Morning Sunshine - The Poles",
+      title: "Psycho - Muse",
       credits: "V. 최동건  G. 오건개 \n B. 이지영 D. 전성령",
-      cover: "https://image.bugsm.co.kr/album/images/500/203757/20375757.jpg",
+      cover: "https://image.bugsm.co.kr/album/images/500/5091/509182.jpg",
     },
 ]
 export const phase1: Track[] = [
